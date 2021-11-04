@@ -1,0 +1,38 @@
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: whitesmoke;
+  z-index: 300;
+  scrollbar-width: 0;
+  margin: 0%;
+}
+
+.navbar > .navbar_img {
+  display: flex;
+  height: 60px;
+  background-color: #333;
+}
+
+.navbar_account {
+  background-color: #333;
+}
+.navbar_account > div {
+  display: inline-block;
+  background-color: #333;
+}
+
+.navbar_account > .div {
+  background-color: #333;
+}
+
+.navbar_account_icon {
+  background-color: #333;
+  margin-right: 0.5vw;
+}
+
+.account {
+  margin-right: 1vw;
+}
