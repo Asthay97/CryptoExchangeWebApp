@@ -1,7 +1,7 @@
 import React from "react";
 import Identicon from "identicon.js";
 // import photo from "../photo.png";
-import "./Navbar.css";
+import "../styles/Navbar.css";
 
 function Navbar(props) {
   return (

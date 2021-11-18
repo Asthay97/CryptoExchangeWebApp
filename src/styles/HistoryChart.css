@@ -1,0 +1,16 @@
+.chart {
+  height: 62vh;
+  color: white;
+}
+.chart-ref {
+  height: 50vh;
+  /* margin-left: 1vw; */
+  /* margin-right: -1vw; */
+  /* width: 10vw; */
+  /* color: black; */
+}
+
+.chart-ref > canvas {
+  /* width: 40vw;
+  margin-right: 3vw; */
+}

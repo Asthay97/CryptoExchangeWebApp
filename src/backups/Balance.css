@@ -1,0 +1,18 @@
+.balance {
+  background-color: rgba(128, 128, 128, 0.26);
+  color: white;
+  width: 30vw;
+  /* place-items: center; */
+}
+.balance > h4 {
+  margin-left: 5vw;
+  margin-top: 1vh;
+  /* place-items: center;
+  place-content: center; */
+}
+.balance_table {
+  margin-left: 1vw;
+}
+.balance_table > thead {
+  margin-right: 1vw;
+}

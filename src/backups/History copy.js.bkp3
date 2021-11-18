@@ -1,0 +1,117 @@
+import React, { Component } from "react";
+import { ethers } from "ethers";
+import "../styles/History.css";
+
+const providers = new ethers.providers.EtherscanProvider(
+  "ropsten",
+  "Y2538JXAEWASRXPFIGPYRT35X6ACHVHFTP"
+);
+class History extends Component {
+  async componentWillMount() {
+    //   this.props.account !== ""
+    // ? await this.historyDetails()
+    // : await this.getData();
+    await this.historyDetails();
+    // await this.getData();
+  }
+
+  getData = () => {
+    console.log("no address", this.props.account);
+    console.log("history state:", this.state.history);
+  };
+
+  historyDetails = () => {
+    this.setState({ id: "0x5757EA38D1e1B2Da8852F91b05dd6174DE21c228" });
+    console.log("accounts:", this.props);
+    providers
+      .getHistory("0x5757EA38D1e1B2Da8852F91b05dd6174DE21c228")
+      .then((getHistory) => {
+        for (let i = 0; i < getHistory.length; i++) {
+          this.setState({
+            history: [...this.state.history, getHistory[i]],
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sentReceived: [],
+      addressValue: [],
+      // value: [],
+      // gasPrice: [],
+      id: "",
+      history: [],
+    };
+  }
+
+  render() {
+    return (
+      <div className="history">
+        <h3>ACTIVITY</h3>
+        {/* {this.props.account === "" ? (
+          <div> Loading ... </div>
+        ) : ( */}
+        <table>
+          <thead className="heading">
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Address</th>
+              <th scope="col">Value(ETH)</th>
+              <th scope="col">Gas(Gwei)</th>
+            </tr>
+          </thead>
+          <tbody className="sent_receive">
+            <tr>
+              {this.state.history.map((data, key) => {
+                // console.log("id:", this.props.account);
+                return this.props.account === data.from ? (
+                  data.to === null ? (
+                    <td key={key}> Contract created</td>
+                  ) : (
+                    <td key={key}>Sent</td>
+                  )
+                ) : (
+                  <td key={key}>Received</td>
+                );
+              })}
+            </tr>
+            <tr className="address_value">
+              {this.state.history.map((data, key) => {
+                return this.props.account === data.from ? (
+                  data.to === null ? (
+                    <div key={key}> {data.hash}</div>
+                  ) : (
+                    <div key={key}>{data.to}</div>
+                  )
+                ) : (
+                  <div key={key}>{data.from}</div>
+                );
+              })}
+            </tr>
+            <tr className="value">
+              {this.state.history.map((data, key) => {
+                let parseValue = parseInt(data.value);
+                let value = ethers.utils.formatEther(parseValue.toString());
+                return <div key={key}>{value}</div>;
+              })}
+            </tr>
+            <tr className="gas_price">
+              {this.state.history.map((data, key) => {
+                let parseValue = parseInt(data.gasPrice);
+                let value = ethers.utils.formatEther(parseValue.toString());
+                return <div key={key}>{value}</div>;
+              })}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+}
+
+export default History;

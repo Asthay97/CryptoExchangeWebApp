@@ -1,0 +1,65 @@
+* {
+  /* background-color: rgba(128, 128, 128, 0.26); */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.history::-webkit-scrollbar {
+  display: none; /*chrome*/
+}
+.history {
+  color: white;
+  background-color: rgba(128, 128, 128, 0.26);
+  height: 88.5vh;
+  width: 30vw;
+  overflow-y: auto;
+}
+.history > table {
+  /* border-collapse: collapse; */
+  width: 40vw;
+}
+table {
+  border-collapse: collapse;
+  width: 40vw;
+}
+tr {
+  border-bottom: 1px solid black;
+}
+
+.history > h3 {
+  margin-left: 7vw;
+  margin-top: 1vh;
+  place-content: center;
+}
+.heading {
+  margin-left: 1vw;
+  place-items: center;
+}
+
+/* .table {
+  color: white;
+  width: 22vw;
+} */
+
+.sent_receive {
+  display: inline_block;
+  margin-left: 0.5vw;
+  /*margin-top: 1vh; */
+}
+
+.address_value {
+  display: inline_block;
+  margin-left: 3vw;
+  margin-top: -18.6vh;
+}
+
+.value {
+  display: inline_block;
+  margin-left: 12vw;
+  margin-top: -10.7vh;
+}
+
+.gas_price {
+  display: inline_block;
+  margin-left: 15vw;
+  margin-top: -18.4vh;
+}

@@ -1,0 +1,77 @@
+{
+    "USDT": {
+        "value": "tether"
+    },
+    "USDC": {
+        "value": "usd-coin"
+    },
+    "LINK": {
+        "value": "chainlink"
+    },
+    "UNI": {
+        "value": "uniswap"
+    },
+    "WBTC": {
+        "value": "wrapped-bitcoin"
+    },
+    "BUSD": {
+        "value": "binance-usd"
+    },
+    "CRO": {
+        "value": "crypto-com-chain"
+    },
+    "FTT": {
+        "value": "ftx-token"
+    },
+    "DAI": {
+        "value": "dai"
+    },
+    "MANA": {
+        "value": "decentraland"
+    },
+    "GRT": {
+        "value": "the-graph"
+    },
+    "AAVE": {
+        "value": "aave"
+    },
+    "LRC": {
+        "value": "loopring"
+    },
+    "QNT": {
+        "value": "quant-network"
+    },
+    "CHZ": {
+        "value": "chiliz"
+    },
+    "LEO": {
+        "value": "leo-token"
+    },
+    "MKR": {
+        "value": "maker"
+    },
+    "ENJ": {
+        "value": "enjincoin"
+    },
+    "BTT": {
+        "value": "bittorrent-2"
+    },
+    "AMP": {
+        "value": "amp-token"
+    },
+    "SHIB": {
+        "value": "shiba-inu"
+    },
+    "RUNE": {
+        "value": "thorchain"
+    },
+    "SAND": {
+        "value": "san-diego-coin"
+    },
+    "CAKE": {
+        "value": "pancakeswap-token"
+    },
+    "BTCB": {
+        "value": "binance-bitcoin"
+    }
+}

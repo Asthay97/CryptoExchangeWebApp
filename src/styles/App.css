@@ -1,0 +1,71 @@
+/* * {
+  background-color: black;
+} */
+* {
+  /* background-color: rgba(128, 128, 128, 0.26); */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.app {
+  background-color: black;
+}
+.app::-webkit-scrollbar {
+  display: none; /*chrome*/
+}
+
+.app_2 {
+  display: inline;
+}
+
+.app_history {
+  display: inline;
+  height: 45vh;
+  /* background-color: rgba(128, 128, 128, 0.26); */
+  width: 22vw;
+  margin-top: 8vh;
+  margin-left: 1vw;
+  display: flex;
+}
+.app_chart {
+  /* display: block; */
+  height: 90vh;
+  /* background-color: rgba(128, 128, 128, 0.26); */
+  width: 53vw;
+  margin-top: -45vh;
+  margin-left: 23.5vw;
+  display: flex;
+}
+
+.app_swap_2 {
+  display: inline;
+  margin-top: -90vh;
+  margin-left: 78vw;
+  height: 88.5vh;
+  width: 22vw;
+  background-color: rgba(128, 128, 128, 0.26);
+  /* color: white; */
+}
+/* .row {
+  background-color: rgba(128, 128, 128, 0.26);
+  color: white;
+}
+.content {
+  background-color: rgba(128, 128, 128, 0.26);
+  color: white;
+} */
+
+.app_balance {
+  height: 44vh;
+  width: 22.5vw;
+  margin-top: -44vh;
+  margin-left: 77vw;
+}
+
+.app_price_tracker {
+  /* background-color: rgba(128, 128, 128, 0.26); */
+  width: 22vw;
+  margin-left: 1vw;
+  height: 44vh;
+  margin-top: -44vh;
+  /* display: inline; */
+}
