@@ -1,0 +1,208 @@
+* {
+  /* background-color: rgba(128, 128, 128, 0.26); */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.buy_app::-webkit-scrollbar {
+  display: none; /*chrome*/
+}
+
+.buy_input {
+  margin-left: 1.5vw;
+  margin-top: 0.5vh;
+  /* place-content: left; */
+}
+.input_data {
+  margin-left: 3vw;
+  margin-top: 0.75vh;
+  width: 2vw;
+}
+.input_balance {
+  /* place-content: right; */
+  /* place-items: right; */
+  /* text-align: right;
+    margin-right: 1.5vw; */
+  margin-top: 1vh;
+  margin-left: 12vw;
+}
+
+body {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  color: white;
+}
+
+.buy_app {
+  height: 84vh;
+  width: 22.2vw;
+  overflow-y: auto;
+  display: inline;
+}
+.menu-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+  background: #ffffff;
+  /* border-radius: 90px; */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  height: 3.9vh;
+  transition: box-shadow 0.4s ease;
+  margin-left: auto; /* Strictly for positioning */
+}
+
+.menu-trigger:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-trigger span {
+  font-weight: 700;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.menu-trigger img {
+  border-radius: 90px;
+}
+
+.menu {
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+
+.balance {
+  height: 47.5vh;
+  overflow-y: auto;
+  margin-top: 14vh;
+  background-color: rgba(128, 128, 128, 0.26);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.balance > h5 {
+  text-align: center;
+  margin-top: 1.5vh;
+}
+
+.balance > table {
+  width: 20vw;
+  height: 12vh;
+  margin-left: 1.5vw;
+  margin-right: 1vw;
+  margin-top: 1.5vh;
+}
+.balance::-webkit-scrollbar {
+  display: none; /*chrome*/
+}
+
+.buy_form {
+  display: inline;
+}
+
+.buy_input {
+  margin-top: 1vh;
+}
+.input_balance {
+  margin-left: 16vw;
+  margin-top: -3vh;
+}
+
+.output {
+  margin-left: 1.5vw;
+  margin-top: 3vh;
+}
+.output_balance {
+  margin-left: 16vw;
+  margin-top: -3vh;
+}
+
+.output_placeholder {
+  margin-top: 1vh;
+  margin-left: 3vw;
+}
+
+.submit_button {
+  display: inline;
+  margin-left: 8vw;
+  margin-top: 3vh;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+  color: rgba(255, 255, 255, 0.787);
+  background: rgba(47, 47, 47, 0.26);
+  width: 5vw;
+}
+
+.input_menu {
+  display: inline;
+  margin-top: -6vh;
+}
+.input_menu > button {
+  /* display: inline; */
+  margin-top: -20.5vh;
+  height: 3.7vh;
+  margin-left: 13.8vw;
+}
+
+.output_menu {
+  display: inline;
+}
+.output_menu > button {
+  /* display: inline; */
+  margin-top: 6.4vh;
+  height: 3.7vh;
+  margin-left: 13.8vw;
+  /* color: rgba(255, 255, 255, 0.644); */
+  /* background: rgba(255, 255, 255, 0.644); */
+}

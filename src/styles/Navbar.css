@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  /* width: auto; */
   color: whitesmoke;
   z-index: 300;
   scrollbar-width: 0;

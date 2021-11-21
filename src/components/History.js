@@ -60,7 +60,7 @@ class History extends Component {
   render() {
     return (
       <div className="history">
-        <h3>ACTIVITY</h3>
+        <h5>ACTIVITY</h5>
         {/* {this.props.account === "" ? (
           <div> Loading ... </div>
         ) : ( */}

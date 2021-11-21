@@ -3,14 +3,10 @@
   color: white;
 }
 .chart-ref {
-  height: 50vh;
-  /* margin-left: 1vw; */
-  /* margin-right: -1vw; */
-  /* width: 10vw; */
-  /* color: black; */
+  height: 52vh;
+  color: black;
 }
 
-.chart-ref > canvas {
-  /* width: 40vw;
-  margin-right: 3vw; */
+.chart_price {
+  margin-left: 1.5vw;
 }

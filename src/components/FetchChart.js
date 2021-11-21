@@ -1,42 +1,17 @@
 import React, { Component } from "react";
-// import { useParams } from "react-router-dom";
 import HistoryChart from "./HistoryChart.js";
 import CoinData from "./CoinData.js";
 import coinGecko from "./coinGecko";
 import "../styles/FetchChart.css";
 import id_symbol from "../artifacts/id_symbol.json";
 const axios = require("axios");
+const rp = require("request-promise");
 
 class FetchChart extends Component {
   async componentWillMount() {
+    await this.fetchData("chainlink");
     await this.getData();
-    await this.fetchData("bitcoin");
   }
-
-  getData = async () => {
-    let response = await axios.request({
-      url:
-        "https://cors-anywhere.herokuapp.com/pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
-      method: "get",
-      params: {
-        start: "1",
-        limit: "25",
-        convert: "USD",
-        cryptocurrency_type: "tokens",
-      },
-      headers: {
-        "X-CMC_PRO_API_KEY": "77eeed41-5e19-4563-9b1d-f2cf779df513",
-      },
-      json: true,
-    });
-
-    const coins = response.data.data;
-    for (let j = 0; j < 10; j++) {
-      this.setState({
-        ccData: [...this.state.ccData, coins[j]],
-      });
-    }
-  };
 
   formatData = (data) => {
     return data.map((el) => {
@@ -85,7 +60,6 @@ class FetchChart extends Component {
         },
       }),
     ]);
-    console.log("detailing:", detail);
 
     this.setState({
       coinData: {
@@ -97,6 +71,29 @@ class FetchChart extends Component {
     });
 
     this.setState({ isLoading: false });
+  };
+
+  getData = async () => {
+    let response = await axios.request({
+      url:
+        "https://cors-anywhere.herokuapp.com/pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
+      params: {
+        start: "1",
+        limit: "25",
+        convert: "USD",
+        cryptocurrency_type: "tokens",
+      },
+      headers: {
+        "X-CMC_PRO_API_KEY": "77eeed41-5e19-4563-9b1d-f2cf779df513",
+      },
+      json: true,
+    });
+    const coins = response.data.data;
+    for (let j = 0; j < 10; j++) {
+      this.setState({
+        ccData: [...this.state.ccData, coins[j]],
+      });
+    }
   };
 
   constructor(props) {
@@ -137,12 +134,17 @@ class FetchChart extends Component {
                     <td>{data.cmc_rank}</td>
                     <td>{data.symbol}</td>
                     <td>
-                      <button onClick={() => this.fetchData(data.name)}>
+                      <button
+                        className="cryptoDetail"
+                        onClick={() => this.fetchData(data.name)}
+                      >
                         {data.name}
                       </button>
                     </td>
                     <td>{data.quote.USD.price.toFixed(2)}</td>
                     <td>{data.quote.USD.market_cap.toLocaleString("fr-CH")}</td>
+                    <td>{data.quote.USD.market_cap_dominance}</td>
+                    <td>{data.quote.USD.volume_24h}</td>
                   </tr>
                 );
               })}
@@ -158,12 +160,3 @@ class FetchChart extends Component {
 }
 
 export default FetchChart;
-
-/* <div id="example">
-          <FetchChart id="Bitcoin" />
-        </div> */
-// {/* <a
-//   target="_blank"
-//   rel="noopener noreferrer"
-//   href={"https://coinpaprika.com/coin/" + data.id}
-// >

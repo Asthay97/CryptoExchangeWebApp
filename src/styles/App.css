@@ -1,16 +1,10 @@
-/* * {
-  background-color: black;
-} */
-* {
-  /* background-color: rgba(128, 128, 128, 0.26); */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 .app {
   background-color: black;
+  /* height: 102vh; */
 }
-.app::-webkit-scrollbar {
-  display: none; /*chrome*/
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .app_2 {
@@ -21,28 +15,28 @@
   display: inline;
   height: 45vh;
   /* background-color: rgba(128, 128, 128, 0.26); */
-  width: 22vw;
-  margin-top: 8vh;
-  margin-left: 1vw;
+  width: 24vw;
+  margin-top: 7vh;
+  margin-left: 0.1vw;
   display: flex;
 }
 .app_chart {
   /* display: block; */
   height: 90vh;
   /* background-color: rgba(128, 128, 128, 0.26); */
-  width: 53vw;
+  /* width: 50vw; */
   margin-top: -45vh;
-  margin-left: 23.5vw;
+  margin-left: 24.4vw;
   display: flex;
 }
 
 .app_swap_2 {
   display: inline;
   margin-top: -90vh;
-  margin-left: 78vw;
-  height: 88.5vh;
-  width: 22vw;
-  background-color: rgba(128, 128, 128, 0.26);
+  margin-left: 76.5vw;
+  /* height: 87.5vh; */
+  width: 24.2vw;
+  /* background-color: rgba(128, 128, 128, 0.26); */
   /* color: white; */
 }
 /* .row {

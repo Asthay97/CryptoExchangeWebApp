@@ -1,21 +1,15 @@
-* {
-  /* background-color: rgba(128, 128, 128, 0.26); */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.history::-webkit-scrollbar {
-  display: none; /*chrome*/
-}
 .history {
   color: white;
   background-color: rgba(128, 128, 128, 0.26);
-  height: 88.5vh;
-  width: 30vw;
+  height: 92vh;
   overflow-y: auto;
+  overflow-x: auto;
 }
+
 .history > table {
-  /* border-collapse: collapse; */
-  width: 40vw;
+  width: 52vw;
+  margin-left: 0.5vw;
+  margin-top: 1.5vh;
 }
 table {
   border-collapse: collapse;
@@ -25,25 +19,18 @@ tr {
   border-bottom: 1px solid black;
 }
 
-.history > h3 {
-  margin-left: 7vw;
-  margin-top: 1vh;
-  place-content: center;
+.history > h5 {
+  text-align: center;
+  margin-top: 3vh;
 }
 .heading {
   margin-left: 1vw;
   place-items: center;
 }
 
-/* .table {
-  color: white;
-  width: 22vw;
-} */
-
 .sent_receive {
   display: inline_block;
   margin-left: 0.5vw;
-  /*margin-top: 1vh; */
 }
 
 .address_value {

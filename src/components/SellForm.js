@@ -31,7 +31,7 @@ class SellForm extends Component {
       let tokenBalance = await token.methods
         .balanceOf(this.state.account)
         .call();
-      console.log("acc:", tokenData.address);
+      // console.log("acc:", tokenData.address);
       this.setState({ tokenBalance: tokenBalance.toString() });
     } else {
       window.alert("Token contract not deployed to detected network.");
@@ -39,7 +39,7 @@ class SellForm extends Component {
     const ethSwapData = EthSwap.networks[networkId];
     if (ethSwapData) {
       const ethSwap = new web3.eth.Contract(EthSwap.abi, ethSwapData.address);
-      console.log("token address:", ethSwap.address);
+      // console.log("token address:", ethSwap.address);
       this.setState({ ethSwap });
     } else {
       window.alert("EthSwap contract not deployed to detected network.");
@@ -75,11 +75,11 @@ class SellForm extends Component {
       balance[index] = item;
       this.setState({ contractAddr: { balance } });
 
-      console.log(
-        "token balance:",
-        this.state.contractAddr.balance,
-        tokenBalance
-      );
+      // console.log(
+      //   "token balance:",
+      //   this.state.contractAddr.balance,
+      //   tokenBalance
+      // );
     });
   }
 
@@ -268,26 +268,18 @@ class SellForm extends Component {
                 let etherRate = etherPrice.data.data.ETH.quote.USD.price;
                 let result = res.data.data[this.state.addOCoin].quote.USD.price;
 
-                console.log(
-                  "res:",
-                  etherAmount,
-                  etherRate,
-                  result,
-                  etherAmount * (etherRate / result)
-                );
+                // console.log(
+                //   "res:",
+                //   etherAmount,
+                //   etherRate,
+                //   result,
+                //   etherAmount * (etherRate / result)
+                // );
 
                 this.setState({
                   outputVal: etherAmount * (etherRate / result),
                 });
               }}
-              // ref={
-              //   (input) => {
-              //     console.log("input");
-              //   }
-              //   // .then(() =>
-              //   //   this.setState({ inputVal: input });
-              //   // )
-              // }
               className="input_value_placeholder"
               placeholder="0"
               // required

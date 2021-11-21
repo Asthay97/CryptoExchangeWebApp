@@ -31,7 +31,7 @@ class BuyForm extends Component {
       let tokenBalance = await token.methods
         .balanceOf(this.state.account)
         .call();
-      console.log("acc:", tokenData.address);
+      // console.log("acc:", tokenData.address);
       this.setState({ tokenBalance: tokenBalance.toString() });
     } else {
       window.alert("Token contract not deployed to detected network.");
@@ -39,7 +39,7 @@ class BuyForm extends Component {
     const ethSwapData = EthSwap.networks[networkId];
     if (ethSwapData) {
       const ethSwap = new web3.eth.Contract(EthSwap.abi, ethSwapData.address);
-      console.log("token address:", ethSwap.address);
+      // console.log("token address:", ethSwap.address);
       this.setState({ ethSwap });
     } else {
       window.alert("EthSwap contract not deployed to detected network.");
@@ -74,12 +74,6 @@ class BuyForm extends Component {
       item = tokenBalance.data.result;
       balance[index] = item;
       this.setState({ contractAddr: { balance } });
-
-      console.log(
-        "token balance:",
-        this.state.contractAddr.balance,
-        tokenBalance
-      );
     });
   }
 
@@ -144,47 +138,13 @@ class BuyForm extends Component {
       });
   };
 
-  sellTokens = (tokenAmount) => {
-    this.setState({ loading: true });
-    this.state.token.methods
-      .approve(this.state.ethSwap.address, tokenAmount)
-      .send({ from: this.state.account })
-      .on("transactionHash", (hash) => {
-        this.state.ethSwap.methods
-          .sellTokens(tokenAmount)
-          .send({ from: this.state.account })
-          .on("transactionHash", (hash) => {
-            this.setState({ loading: false });
-          });
-      });
-  };
-
-  onClickInput = () => this.setState({ isIActive: !this.state.isIActive });
+  // onClickInput = () => this.setState({ isIActive: !this.state.isIActive });
   onClickOutput = () => this.setState({ isOActive: !this.state.isOActive });
 
   handleInputClick = (coin) => {
-    if (coin === "Ether") {
-      this.setState({
-        iBalance: window.web3.utils.fromWei(this.state.tokenBalance, "Ether"),
-      });
-    } else if (coin === "DApp") {
-      this.setState({
-        iBalance: window.web3.utils.fromWei(this.state.ethBalance, "Ether"),
-      });
-    } else {
-      Object.keys(contractAddress).map((keyN, index) => {
-        const dayTasks = contractAddress[keyN];
-        return Object.keys(dayTasks).map(async (key) => {
-          if (keyN === coin) {
-            return this.setState({
-              iBalance: this.state.contractAddr.balance[index],
-            });
-          }
-        });
-      });
-    }
-    this.setState({ addICoin: coin });
-    this.setState({ isIActive: false });
+    this.setState({
+      iBalance: window.web3.utils.fromWei(this.state.tokenBalance, "Ether"),
+    });
   };
 
   handleOutputClick = (coin) => {
@@ -228,7 +188,7 @@ class BuyForm extends Component {
           className="buy_form"
           onSubmit={(event) => {
             event.preventDefault();
-            console.log("event:", event.target.value);
+            // console.log("event:", event.target.value);
             let etherAmount;
             etherAmount = this.state.input.value.toString();
             etherAmount = window.web3.utils.toWei(etherAmount, "Ether");
@@ -236,19 +196,18 @@ class BuyForm extends Component {
           }}
         >
           <div>
-            <label className="buy_input">
+            &nbsp;
+            <div className="buy_input">
               <b>Input</b>
-            </label>
-            <span className="input_balance">
-              Balance: {this.state.iBalance}
-            </span>
+            </div>
+            <div className="input_balance">Balance: {this.state.iBalance}</div>
           </div>
-          <div className="input-data">
+          <div className="input_data">
             <input
               type="text"
               onChange={async (event) => {
                 event.preventDefault();
-                console.log("event.target:", event.target.value);
+                // console.log("event.target:", event.target.value);
                 this.setState({ inputVal: event.target.value });
 
                 // const etherAmount = this.state.inputVal.toString();
@@ -264,7 +223,7 @@ class BuyForm extends Component {
                     },
                   }
                 );
-
+                console.log("res", res);
                 let etherPrice = await axios.get(
                   "https://cors-anywhere.herokuapp.com/pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH",
                   {
@@ -277,39 +236,19 @@ class BuyForm extends Component {
                 let etherRate = etherPrice.data.data.ETH.quote.USD.price;
                 let result = res.data.data[this.state.addOCoin].quote.USD.price;
 
-                console.log(
-                  "res:",
-                  etherAmount,
-                  etherRate,
-                  result,
-                  etherAmount * (etherRate / result)
-                );
-
                 this.setState({
                   outputVal: etherAmount * (etherRate / result),
                 });
               }}
-              // ref={
-              //   (input) => {
-              //     console.log("input");
-              //   }
-              //   // .then(() =>
-              //   //   this.setState({ inputVal: input });
-              //   // )
-              // }
               className="input_value_placeholder"
               placeholder="0"
-              // required
+              required
             />
           </div>
-          <div>
-            <label className="output">
-              <b>Output</b>
-            </label>
-            <span className="output_balance">
-              Balance: {this.state.oBalance}
-            </span>
+          <div className="output">
+            <b>Output</b>
           </div>
+          <div className="output_balance">Balance: {this.state.oBalance}</div>
           <div className="output_placeholder">
             <input
               type="text"
@@ -320,45 +259,29 @@ class BuyForm extends Component {
             />
           </div>
           <button type="submit" className="submit_button">
-            SWAP!
+            <b>SWAP</b>
           </button>
         </form>
 
         {/* Buttons for input and output tokens */}
         <div className="input_menu">
-          <button onClick={this.onClickInput} className="menu-trigger">
+          <button className="menu-trigger">
             <span>{this.state.addICoin}</span>
             <img
-              src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
+              src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+              height="10px"
+              maxWidth="20px"
               alt="User avatar"
             />
           </button>
-          <nav
-            ref={this.state.dropdownIRef}
-            className={`menu ${this.state.isIActive ? "active" : "inactive"}`}
-          >
-            <ul>
-              {this.state.iCoins.map((el) => {
-                return (
-                  <li>
-                    <a
-                      onClick={() => this.handleInputClick(el)}
-                      href="#"
-                      className="dropdown-input-item"
-                    >
-                      {el}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
         </div>
         <div className="output_menu">
           <button onClick={this.onClickOutput} className="menu-trigger">
             <span>{this.state.addOCoin}</span>
             <img
-              src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
+              src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+              height="10px"
+              maxWidth="20px"
               alt="User avatar"
             />
           </button>
@@ -386,18 +309,27 @@ class BuyForm extends Component {
 
         {/* Balance display */}
         <div className="balance">
-          <h4>WALLET BALANCE </h4>
-          <h6>Token Name Balance</h6>
-          {Object.keys(contractAddress).map((keyN, index) => {
-            if (this.state.contractAddr.balance[index] !== 0) {
-              return (
-                <div>
-                  {keyN}
-                  {this.state.contractAddr.balance[index]}
-                </div>
-              );
-            }
-          })}
+          <h5>WALLET BALANCE </h5>
+          <table>
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(contractAddress).map((keyN, index) => {
+                if (this.state.contractAddr.balance[index] != 0) {
+                  return (
+                    <tr>
+                      <td>{keyN}</td>
+                      <td>{this.state.contractAddr.balance[index]}</td>
+                    </tr>
+                  );
+                }
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
     );
