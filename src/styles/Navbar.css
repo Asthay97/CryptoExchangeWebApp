@@ -13,10 +13,13 @@
 
 .navbar > .navbar_img {
   display: flex;
-  height: 60px;
+  height: 35px;
   background-color: #333;
 }
-
+.navbar > h5 {
+  margin-left: -57vw;
+  margin-top: 1vh;
+}
 .navbar_account {
   background-color: #333;
 }

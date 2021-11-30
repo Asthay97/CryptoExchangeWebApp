@@ -1,6 +1,6 @@
 .app {
-  background-color: black;
-  /* height: 102vh; */
+  background-color: rgba(61, 60, 60, 0.212);
+  height: 102vh;
 }
 body {
   overflow-y: hidden; /* Hide vertical scrollbar */
@@ -14,17 +14,13 @@ body {
 .app_history {
   display: inline;
   height: 45vh;
-  /* background-color: rgba(128, 128, 128, 0.26); */
-  width: 24vw;
+  width: 23.8vw;
   margin-top: 7vh;
-  margin-left: 0.1vw;
+  margin-left: 0.3vw;
   display: flex;
 }
 .app_chart {
-  /* display: block; */
   height: 90vh;
-  /* background-color: rgba(128, 128, 128, 0.26); */
-  /* width: 50vw; */
   margin-top: -45vh;
   margin-left: 24.4vw;
   display: flex;
@@ -34,19 +30,8 @@ body {
   display: inline;
   margin-top: -90vh;
   margin-left: 76.5vw;
-  /* height: 87.5vh; */
-  width: 24.2vw;
-  /* background-color: rgba(128, 128, 128, 0.26); */
-  /* color: white; */
+  width: 24vw;
 }
-/* .row {
-  background-color: rgba(128, 128, 128, 0.26);
-  color: white;
-}
-.content {
-  background-color: rgba(128, 128, 128, 0.26);
-  color: white;
-} */
 
 .app_balance {
   height: 44vh;
@@ -56,10 +41,8 @@ body {
 }
 
 .app_price_tracker {
-  /* background-color: rgba(128, 128, 128, 0.26); */
   width: 22vw;
   margin-left: 1vw;
   height: 44vh;
   margin-top: -44vh;
-  /* display: inline; */
 }

@@ -3,7 +3,7 @@
   "name": "Dapp University Starter Kit",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://export-download.canva.com/1f-0c/DAExLM1f-0c/6/0/0001-13447542527.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20211129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211129T052453Z&X-Amz-Expires=91300&X-Amz-Signature=a292348aefdcc32ccf434d36fb6b6c314e6d1196c92bf92a01eb680813cdeead&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Charcoal%2520Modern%2520Education%2520Logo.png&response-expires=Tue%2C%2030%20Nov%202021%2006%3A46%3A33%20GMT",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

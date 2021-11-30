@@ -21,7 +21,7 @@
   /* place-content: right; */
   /* place-items: right; */
   /* text-align: right;
-    margin-right: 1.5vw; */
+  margin-right: 1.5vw; */
   margin-top: 1vh;
   margin-left: 12vw;
 }
@@ -146,7 +146,7 @@ body {
   margin-top: 1vh;
 }
 .input_balance {
-  margin-left: 16vw;
+  margin-left: 6.5vw;
   margin-top: -3vh;
 }
 
@@ -155,7 +155,7 @@ body {
   margin-top: 3vh;
 }
 .output_balance {
-  margin-left: 16vw;
+  margin-left: 6.5vw;
   margin-top: -3vh;
 }
 

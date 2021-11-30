@@ -1,13 +1,13 @@
 import React from "react";
 import Identicon from "identicon.js";
-// import photo from "../photo.png";
+import photo from "../webapp-logo.png";
 import "../styles/Navbar.css";
 
 function Navbar(props) {
   return (
     <div className="navbar">
-      <h3>Crypto Exchange</h3>
-      {/* <img src={photo} className="navbar_img" alt="" /> */}
+      <img src={photo} className="navbar_img" alt="" />
+      <h5>CRYPTO TOKEN EXCHANGE</h5>
       <div className="navbar_account">
         <div className="account">{props.account}</div>
         <div>

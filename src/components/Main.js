@@ -7,9 +7,21 @@ function Main(props) {
   const [state, setState] = useState({ currentForm: "buy" });
   let content;
   if (state.currentForm === "buy") {
-    content = <BuyForm />;
+    content = (
+      <BuyForm
+        ethBalance={props.ethBalance}
+        tokenBalance={props.tokenBalance}
+        buyTokens={props.buyTokens}
+      />
+    );
   } else {
-    content = <SellForm />;
+    content = (
+      <SellForm
+        ethBalance={props.ethBalance}
+        tokenBalance={props.tokenBalance}
+        sellTokens={props.sellTokens}
+      />
+    );
   }
 
   return (

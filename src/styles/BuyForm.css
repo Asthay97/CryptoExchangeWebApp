@@ -1,5 +1,4 @@
 * {
-  /* background-color: rgba(128, 128, 128, 0.26); */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -10,7 +9,6 @@
 .buy_input {
   margin-left: 1.5vw;
   margin-top: 0.5vh;
-  /* place-content: left; */
 }
 .input_data {
   margin-left: 3vw;
@@ -18,16 +16,11 @@
   width: 2vw;
 }
 .input_balance {
-  /* place-content: right; */
-  /* place-items: right; */
-  /* text-align: right;
-  margin-right: 1.5vw; */
   margin-top: 1vh;
   margin-left: 12vw;
 }
 
 body {
-  /* font-family: Arial, Helvetica, sans-serif; */
   color: white;
 }
 
@@ -45,9 +38,9 @@ body {
   box-sizing: border-box;
 }
 
+/* Buttons - input,output */
 .menu-trigger {
   background: #ffffff;
-  /* border-radius: 90px; */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -114,7 +107,7 @@ body {
 }
 
 .balance {
-  height: 47.5vh;
+  height: 42.7vh;
   overflow-y: auto;
   margin-top: 14vh;
   background-color: rgba(128, 128, 128, 0.26);
@@ -128,11 +121,10 @@ body {
 }
 
 .balance > table {
-  width: 20vw;
+  width: 28vw;
   height: 12vh;
-  margin-left: 1.5vw;
-  margin-right: 1vw;
-  margin-top: 1.5vh;
+  margin-left: 2.4vw;
+  margin-top: 3vh;
 }
 .balance::-webkit-scrollbar {
   display: none; /*chrome*/
@@ -140,34 +132,32 @@ body {
 
 .buy_form {
   display: inline;
+  height: 12vh;
+  background-color: rgb(173, 79, 79);
 }
 
 .buy_input {
-  margin-top: 1vh;
+  margin-top: 3vh;
+  margin-left: 3vw;
 }
 .input_balance {
-  margin-left: 16vw;
+  margin-left: 5.5vw;
   margin-top: -3vh;
 }
 
 .output {
-  margin-left: 1.5vw;
-  margin-top: 3vh;
+  margin-left: 3vw;
+  margin-top: 3.5vh;
 }
 .output_balance {
-  margin-left: 16vw;
+  margin-left: 4.7vw;
   margin-top: -3vh;
-}
-
-.output_placeholder {
-  margin-top: 1vh;
-  margin-left: 3vw;
 }
 
 .submit_button {
   display: inline;
   margin-left: 8vw;
-  margin-top: 3vh;
+  margin-top: 4vh;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
@@ -181,7 +171,8 @@ body {
   transition: box-shadow 0.4s ease;
   color: rgba(255, 255, 255, 0.787);
   background: rgba(47, 47, 47, 0.26);
-  width: 5vw;
+  width: 6.5vw;
+  height: 5vh;
 }
 
 .input_menu {
@@ -189,20 +180,30 @@ body {
   margin-top: -6vh;
 }
 .input_menu > button {
-  /* display: inline; */
-  margin-top: -20.5vh;
-  height: 3.7vh;
-  margin-left: 13.8vw;
+  margin-top: -24.7vh;
+  height: 3.75vh;
+  margin-left: 14.8vw;
+  color: rgba(255, 255, 255, 0.644);
+  background: rgba(255, 255, 255, 0.185);
 }
 
 .output_menu {
   display: inline;
 }
 .output_menu > button {
-  /* display: inline; */
-  margin-top: 6.4vh;
-  height: 3.7vh;
-  margin-left: 13.8vw;
-  /* color: rgba(255, 255, 255, 0.644); */
-  /* background: rgba(255, 255, 255, 0.644); */
+  margin-top: 8.1vh;
+  height: 3.75vh;
+  margin-left: 14.8vw;
+  color: rgba(255, 255, 255, 0.644);
+  background: rgba(255, 255, 255, 0.185);
+}
+
+.input_placeholder {
+  margin-top: 1vh;
+  margin-left: 4vw;
+}
+
+.output_placeholder {
+  margin-top: 1vh;
+  margin-left: 4vw;
 }

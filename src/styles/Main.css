@@ -1,7 +1,7 @@
 .main_content {
   color: white;
   background-color: rgba(128, 128, 128, 0.26);
-  height: 44vh;
+  height: 48.7vh;
   /*width: 22.2vw; */
   /* overflow-y: auto; */
 }
@@ -14,8 +14,8 @@
   display: inline;
   border-bottom-color: black;
   text-align: center;
-  color: rgb(119, 117, 117);
-  background: rgba(47, 47, 47, 0.26);
+  color: rgba(240, 232, 232, 0.774);
+  background: rgba(47, 47, 47, 0.541);
   cursor: pointer;
   justify-content: space-between;
   align-items: center;
@@ -24,17 +24,18 @@
   border: none;
   vertical-align: middle;
   transition: box-shadow 0.4s ease;
-  width: 11.85vw;
+  width: 11.8vw;
+  margin-top: 1vw;
 }
 
 .main_sell {
   /* margin-left: 6vw; */
-  width: 11.85vw;
+  margin-top: 1vw;
+  width: 11.8vw;
   display: inline;
   text-align: center;
-  color: rgb(119, 117, 117);
-  background: rgba(47, 47, 47, 0.26);
-  /* border-radius: 5px; */
+  color: rgba(240, 232, 232, 0.774);
+  background: rgba(47, 47, 47, 0.541);
   cursor: pointer;
   justify-content: space-between;
   align-items: center;

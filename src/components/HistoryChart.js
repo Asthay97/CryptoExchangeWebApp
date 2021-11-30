@@ -28,7 +28,7 @@ const HistoryChart = ({ data }) => {
         data: {
           datasets: [
             {
-              label: `${detail.name} price`,
+              label: `${detail.id} price`,
               data: determineTimeFormat(),
               backgroundColor: "rgba(175, 0, 0, 0.1)",
               borderColor: "rgba(174, 0, 0, 0.6)",
@@ -48,16 +48,17 @@ const HistoryChart = ({ data }) => {
     if (detail) {
       return (
         <>
-          <p className="my-0">${detail.current_price.toFixed(2)}</p>
-          <p
+          {/* <p className="my-0">${detail.current_price.toFixed(2)}</p> */}
+          <div
             className={
-              detail.price_change_24h < 0
-                ? "text-danger my-0"
-                : "text-success my-0"
+              detail.price_change_24h < 0 ? "text-danger" : "text-success"
             }
           >
-            {detail.price_change_percentage_24h.toFixed(2)}%
-          </p>
+            <div className="price">${detail.current_price.toFixed(2)}</div>
+            <div className="percentage">
+              {detail.price_change_percentage_24h.toFixed(2)}%
+            </div>
+          </div>
         </>
       );
     }

@@ -32,7 +32,6 @@ class FetchChart extends Component {
         });
       }
     });
-
     this.setState({ isLoading: true });
     const [day, week, year, detail] = await Promise.all([
       coinGecko.get(`/coins/${id}/market_chart/`, {
@@ -136,7 +135,7 @@ class FetchChart extends Component {
                     <td>
                       <button
                         className="cryptoDetail"
-                        onClick={() => this.fetchData(data.name)}
+                        onClick={() => this.fetchData(data.symbol)}
                       >
                         {data.name}
                       </button>

@@ -10,3 +10,11 @@
 .chart_price {
   margin-left: 1.5vw;
 }
+
+.percentage {
+  display: inline;
+  margin-left: 2vh;
+}
+.price {
+  display: inline;
+}

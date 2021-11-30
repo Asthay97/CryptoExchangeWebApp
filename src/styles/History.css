@@ -9,19 +9,21 @@
 .history > table {
   width: 52vw;
   margin-left: 0.5vw;
-  margin-top: 1.5vh;
+  margin-top: 2.5vh;
 }
 table {
   border-collapse: collapse;
   width: 40vw;
 }
 tr {
-  border-bottom: 1px solid black;
+  margin-top: 2vh;
+  /* border-bottom: 1px solid black; */
 }
 
 .history > h5 {
   text-align: center;
   margin-top: 3vh;
+  margin-bottom: 2.5vh;
 }
 .heading {
   margin-left: 1vw;
